@@ -29,7 +29,7 @@ There are many ways to get started building an app. This lab follows a specific 
 If you finish lab early consider:
 
   - try working through the next section of the lab before it is covered in lecture - see what you can figure out
-  - **SUPER BONUS** - Once you finish this whole lab, add a second model for comments, it should have the name of the person who wrote it, and some text for the comment (maybe time stamps?). This model should 'belong' the the post, the data should be related in some way. Do you own research of how to set up a `one-to-many` relationship (one post can have many comments, one comment only belongs to one post), in MongoDB. Use Mongo Documents, Google, or [Matt's Notes](https://git.generalassemb.ly/Web-Development-Immersive-Remote/WDIR-Stan-Lee/tree/master/unit_2/w07d01/instructor_notes) - note we will not have class time to teach a second, related model. 
+  - **SUPER BONUS** - Once you finish this whole lab, add a second model for comments, it should have the name of the person who wrote it, and some text for the comment (maybe time stamps?). This model should 'belong' to the post, the data should be related in some way. Do you own research of how to set up a `one-to-many` relationship (one post can have many comments, one comment only belongs to one post), in MongoDB. Use Mongo Documents, Google. 
 
 ### Set up
 
@@ -42,7 +42,7 @@ Let's keep track of our Restful Routes as we build out our app.
 |1| Index | /logs | GET | `Log.find({})` |
 |2| Show | /logs/:id | GET | `Log.findById(req.params.id)` |
 |3| Create | /logs | POST| `Log.create(req.body)` |
-|4| Update | /logs/:id | PUT | `Log.findByIdAndUpdate()` |
+|4| Update | /logs/:id | PUT | `Log.findByIdAndUpdate(req.params.id)` |
 |5| Destroy | /logs | DELETE | `Log.findByIdAndRemove()` |
 
 1. Create a new folder `mkdir captains_log`
