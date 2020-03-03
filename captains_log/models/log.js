@@ -16,3 +16,4 @@ const Log = mongoose.model('Log', logSchema);
 //make this exportable to be accessed in `app.js`
 module.exports = Log;
 
+

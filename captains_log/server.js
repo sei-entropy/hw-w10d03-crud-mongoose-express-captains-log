@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Log = require('./models/log.js');
 app.use(express.json());
 
+
 mongoose.connect('mongodb://localhost:27017/basket', { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
     console.log('CONNECTED TO MONGO SUCCESS');
