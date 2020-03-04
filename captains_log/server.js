@@ -18,7 +18,8 @@ app.listen(PORT, () => {
 
 
 app.post('/add', function(req, res) {
-    Log.create(req.body, function(error, log) {
+    Log.create(req.body, 
+    function(error, log) {
         if(error) {
             console.log(error);
         } else {
@@ -29,8 +30,10 @@ app.post('/add', function(req, res) {
 });
 
 
-app.get('/logs', function(req, res) {
-    Log.find({}, function (error, logs) {
+app.get('/logs', 
+    function(req, res) {
+    Log.find({},
+    function (error, logs) {
         if(error) {
             console.log(error);
         } else {
@@ -40,9 +43,20 @@ app.get('/logs', function(req, res) {
     });
 });
 
-
+app.get('/logs/:id', function(req, res) {
+   Log.findById(req.params.id), 
+   function (error, logs) {
+        if(error) {
+            console.log(error);
+        } else {
+            console.log(logs);
+            res.json(logs);
+        }
+    });
+});
 app.put('/logs/:id', function(req, res) {
-    Log.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(error, log) {
+    Log.findByIdAndUpdate(req.params.id, req.body, {new: true}, 
+    function(error, log) {
         if(error) {
             console.log(error);
         } else {
@@ -54,7 +68,8 @@ app.put('/logs/:id', function(req, res) {
 
 
 app.delete('/logs/:id', function(req, res) {
-    Log.findByIdAndRemove(req.params.id, {}, function(error, log) {
+    Log.findByIdAndRemove(req.params.id, {}, 
+    function(error, log) {
         if(error) {
             console.log(error);
         } else {
